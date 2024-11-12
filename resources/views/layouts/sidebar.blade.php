@@ -8,17 +8,21 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('dashboard') }}"><i class="fas fa-home"></i>
+                    <span>Dashboard</span></a>
             </li>
             <li class="menu-header">Profil</li>
-            <li><a class="nav-link" href=""><i class="fas fa-fire"></i> <span>Profil
+            <li class="{{ request()->is('profilDesa') || request()->is('profilDesa/*') ? 'active' : '' }}"><a
+                    class="nav-link" href="{{ route('profilDesa.index') }}"><i class="fas fa-fire"></i> <span>Profil
                         Desa</span></a></li>
             <li class="menu-header">User & Master</li>
-            <li class="dropdown">
+            <li class="dropdown {{ request()->is('penduduk') || request()->is('penduduk/*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i>
                     <span>Data User</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('penduduk.index') }}">Penduduk</a></li>
+                    <li class="{{ request()->is('penduduk') || request()->is('penduduk/*') ? 'active' : '' }}"><a
+                            class="nav-link" href="{{ route('penduduk.index') }}">Penduduk</a></li>
                     <li><a class="nav-link" href="">Pengurus</a></li>
                 </ul>
             </li>

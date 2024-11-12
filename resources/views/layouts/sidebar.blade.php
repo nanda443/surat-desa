@@ -18,7 +18,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-user"></i>
                     <span>Data User</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="">Penduduk</a></li>
+                    <li><a class="nav-link" href="{{ route('penduduk.index') }}">Penduduk</a></li>
                     <li><a class="nav-link" href="">Pengurus</a></li>
                 </ul>
             </li>

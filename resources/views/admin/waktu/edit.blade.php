@@ -12,13 +12,13 @@
                         @method('PUT')
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label for="inputName">Hari</label>
+                                <label for="inputName">Hari<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('hari') is-invalid @enderror"
                                     name="hari" id="inputName" placeholder="" value="{{ $waktuPelayanan->hari }}"
                                     readonly="">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="jam_buka">Jam Buka</label>
+                                <label for="jam_buka">Jam Buka<span class="text-danger">*</span></label>
                                 <input type="time" class="form-control @error('jam_buka') is-invalid @enderror"
                                     name="jam_buka" id="jam_buka" value="{{ $waktuPelayanan->jam_buka }}">
                                 @error('jam_buka')
@@ -27,7 +27,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="jam_tutup">Jam Tutup</label>
+                                <label for="jam_tutup">Jam Tutup<span class="text-danger">*</span></label>
                                 <input type="time" class="form-control @error('jam_tutup') is-invalid @enderror"
                                     name="jam_tutup" id="jam_tutup" value="{{ $waktuPelayanan->jam_tutup }}">
                                 @error('jam_tutup')

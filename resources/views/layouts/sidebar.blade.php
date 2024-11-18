@@ -27,7 +27,7 @@
                 </ul>
             </li>
             <li
-                class="dropdown {{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') || request()->is('jenis-surat') || request()->is('jenis-surat/*') ? 'active' : '' }}">
+                class="dropdown {{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') || request()->is('jenis-surat') || request()->is('jenis-surat/*') || request()->is('prosedur') || request()->is('prosedur/*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
                     <span>Data Master</span></a>
                 <ul class="dropdown-menu">
@@ -37,7 +37,9 @@
                         class="{{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('waktu-pelayanan.index') }}">Waktu Pelayanan</a>
                     </li>
-                    <li><a class="nav-link" href="">Prosedur</a></li>
+                    <li class="{{ request()->is('prosedur') || request()->is('prosedur/*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('prosedur.index') }}">Prosedur</a>
+                    </li>
                 </ul>
             </li>
             <li class="menu-header">Layanan</li>

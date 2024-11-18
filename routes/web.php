@@ -5,6 +5,7 @@ use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\ProsedurController;
 use App\Http\Controllers\WaktuPelayananController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -16,3 +17,4 @@ Route::resource('profilDesa', ProfilDesaController::class);
 Route::resource('penduduk', PendudukController::class);
 Route::resource('waktu-pelayanan', WaktuPelayananController::class);
 Route::resource('jenis-surat', JenisSuratController::class);
+Route::resource('prosedur', ProsedurController::class);

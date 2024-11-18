@@ -31,11 +31,14 @@
                                         {{ \Carbon\Carbon::parse($penduduk->date_of_birth)->format('d-m-Y') }}</p>
                                     <p><strong>Jenis Kelamin:</strong> {{ $penduduk->gender }}</p>
                                     <p><strong>Agama:</strong> {{ $penduduk->religion }}</p>
+                                    <p><strong>Telepon:</strong> {{ $penduduk->phone }}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p><strong>Email:</strong> {{ $penduduk->email }}</p>
-                                    <p><strong>Telepon:</strong> {{ $penduduk->phone }}</p>
-                                    <p><strong>Alamat:</strong> {{ $penduduk->address }}</p>
+                                    <p><strong>RT:</strong> {{ $penduduk->rt }}</p>
+                                    <p><strong>RW:</strong> {{ $penduduk->rw }}</p>
+                                    <p><strong>Desa:</strong> {{ $penduduk->desa }}</p>
+                                    <p><strong>Kecamatan:</strong> {{ $penduduk->kecamatan }}</p>
+                                    <p><strong>Kabupaten/Kota:</strong> {{ $penduduk->kabupaten }}</p>
                                 </div>
                             </div>
                         </div>

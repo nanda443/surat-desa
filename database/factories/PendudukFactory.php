@@ -19,15 +19,19 @@ class PendudukFactory extends Factory
         return [
             //
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
             'password' => bcrypt('password'), // Password yang dienkripsi
             'place_of_birth' => $this->faker->city, // Menggunakan nama kota sebagai tempat lahir
             'date_of_birth' => $this->faker->date(),
-            'nik' => $this->faker->unique()->numerify('##########'), // NIK 10 digit
-            'gender' => $this->faker->randomElement(['Laki-Laki', 'Perempuan']), // NIK 10 digit
-            'address' => $this->faker->address,
-            'phone' => $this->faker->phoneNumber,
-            'religion' => $this->faker->randomElement(['Islam', 'Kristen', 'Hindu', 'Buddha', 'Konghucu', 'Lainnya']),
+            'nik' => $this->faker->nik(), // NIK 10 digit
+            'kk' => $this->faker->unique()->numerify('##########'), // kk 10 digit
+            'gender' => $this->faker->randomElement(['Laki-Laki', 'Perempuan']), //
+            'rt' => $this->faker->randomDigitNotNull,
+            'rw' => $this->faker->randomDigitNotNull,
+            'desa' => $this->faker->city,
+            'kecamatan' => $this->faker->city,
+            'kabupaten' => $this->faker->city,
+            'religion' => $this->faker->randomElement(['Islam', 'Kristen', 'Hindu', 'Buddha', 'Konghucu']),
             'photo_path' => null, // Atau Anda dapat mengisi dengan path foto dummy
         ];
     }

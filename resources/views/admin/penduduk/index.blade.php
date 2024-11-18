@@ -28,12 +28,11 @@
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Nama Lengkap</th>
-                                        <th class="text-center">Email</th>
+                                        <th class="text-center">Telepon</th>
                                         <th class="text-center">Tannggal Lahir</th>
                                         <th class="text-center">Tempat Lahir</th>
                                         <th class="text-center">NIK</th>
                                         <th class="text-center">Jenis Kelamin</th>
-                                        <th class="text-center">Telepon</th>
                                         <th class="text-center">Agama</th>
                                         {{-- <th class="text-center">Alamat</th> --}}
                                         <th class="text-center">Status</th>
@@ -44,12 +43,11 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
                                             <td>{{ $item->date_of_birth }}</td>
                                             <td>{{ $item->place_of_birth }}</td>
                                             <td>{{ $item->nik }}</td>
                                             <td>{{ $item->gender }}</td>
-                                            <td>{{ $item->phone }}</td>
                                             <td>{{ $item->religion }}</td>
                                             {{-- <td>{{ $item->address }}</td> --}}
                                             <td>
@@ -57,11 +55,15 @@
                                                     // Cek apakah ada field yang kosong
                                                     $isIncomplete =
                                                         empty($item->name) ||
-                                                        empty($item->email) ||
                                                         empty($item->date_of_birth) ||
                                                         empty($item->place_of_birth) ||
                                                         empty($item->nik) ||
-                                                        empty($item->address) ||
+                                                        empty($item->kk) ||
+                                                        empty($item->rt) ||
+                                                        empty($item->rw) ||
+                                                        empty($item->desa) ||
+                                                        empty($item->kecamatan) ||
+                                                        empty($item->kabupaten) ||
                                                         empty($item->phone) ||
                                                         empty($item->religion) ||
                                                         empty($item->gender);

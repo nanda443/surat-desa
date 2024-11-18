@@ -21,10 +21,11 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" id="inputEmail4" placeholder="" value="{{ $penduduk->email }}">
-                                @error('email')
+                                <label for="telepon">Telepon</label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="telepon"
+                                    value="{{ $penduduk->phone }}">
+                                @error('phone')
                                     <div class="invalid-feedback">{{ $message }}
                                     </div>
                                 @enderror
@@ -38,6 +39,7 @@
                                     </div>
                                 @enderror
                             </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -63,26 +65,30 @@
                             <div class="form-group col-md-6">
                                 <label for="Nik">NIK</label>
                                 <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"
-                                    id="Nik" value="{{ $penduduk->nik }}">
+                                    oninput="this.value = this.value.replace(/\D/g, '')" id="Nik"
+                                    value="{{ $penduduk->nik }}">
                                 @error('nik')
                                     <div class="invalid-feedback">{{ $message }}
                                     </div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="telepon">Telepon</label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    name="phone" id="telepon" value="{{ $penduduk->phone }}">
-                                @error('phone')
+                                <label for="kk">No Kartu Keluarga</label>
+                                <input type="text" class="form-control @error('kk') is-invalid @enderror" name="kk"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" id="kk"
+                                    value="{{ $penduduk->kk }}">
+                                @error('kk')
                                     <div class="invalid-feedback">{{ $message }}
                                     </div>
                                 @enderror
                             </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Agama</label>
                                 <select class="form-control @error('religion') is-invalid @enderror" name="religion">
+                                    <option value="" disabled hidden selected>Pilih Agama</option>
                                     <option value="Islam" {{ $penduduk->religion == 'Islam' ? 'selected' : '' }}>Islam
                                     </option>
                                     <option value="Kristen" {{ $penduduk->religion == 'Kristen' ? 'selected' : '' }}>
@@ -99,27 +105,73 @@
                             <div class="form-group col-md-6">
                                 <label>Jenis Kelamin</label>
                                 <select class="form-control @error('gender') is-invalid @enderror" name="gender">
-                                    <option value="Laki-Laki" {{ $penduduk->gender == 'Laki-Laki' ? 'selected' : '' }}>
-                                        Laki-Laki</option>
+                                    <option value="" disabled hidden selected>Pilih Jenis kelamin</option>
+                                    <option value="Laki-laki" {{ $penduduk->gender == 'Laki-laki' ? 'selected' : '' }}>
+                                        Laki-laki</option>
                                     <option value="Perempuan" {{ $penduduk->gender == 'Perempuan' ? 'selected' : '' }}>
                                         Perempuan</option>
                                 </select>
                             </div>
 
                         </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Alamat</label>
-                            <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"
-                                id="inputAddress" placeholder="" value="{{ $penduduk->address }}">
-                            @error('address')
-                                <div class="invalid-feedback">{{ $message }}
-                                </div>
-                            @enderror
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="RT">RT<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('rt') is-invalid @enderror" name="rt"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" id="RT"
+                                    value="{{ $penduduk->rt }}">
+                                @error('rt')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="RW">RW<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('rw') is-invalid @enderror"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" name="rw" id="RW"
+                                    value="{{ $penduduk->rw }}">
+                                @error('rw')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="Desa">Desa<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('desa') is-invalid @enderror"
+                                    name="desa" id="Desa" value="{{ $penduduk->desa }}">
+                                @error('desa')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Kecamatan">Kecamatan<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('kecamatan') is-invalid @enderror"
+                                    name="kecamatan" id="Kecamatan" value="{{ $penduduk->kecamatan }}">
+                                @error('kecamatan')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Kabupaten">Kabupaten/Kota<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('kabupaten') is-invalid @enderror"
+                                    name="kabupaten" id="Kabupaten" value="{{ $penduduk->kabupaten }}">
+                                @error('kabupaten')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="image1">Foto</label>
-                            <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo"
-                                id="image1">
+                            <input type="file" class="form-control @error('photo') is-invalid @enderror"
+                                name="photo" id="image1">
                             @error('photo')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

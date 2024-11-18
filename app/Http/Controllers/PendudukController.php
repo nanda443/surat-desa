@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePendudukRequest;
 use App\Http\Requests\UpdatePendudukRequest;
+use Illuminate\Validation\Rules\Unique;
 
 class PendudukController extends Controller
 {
@@ -17,7 +18,7 @@ class PendudukController extends Controller
     public function index()
     {
         //
-        $penduduk = Penduduk::paginate(10);
+        $penduduk = Penduduk::latest()->paginate(10);
         return view('admin.penduduk.index', [
             'title' => 'Penduduk',
             'penduduk' => $penduduk
@@ -43,13 +44,17 @@ class PendudukController extends Controller
         //
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:penduduks',
+            'phone' => 'required|string|unique:penduduks',
             'password' => 'required|string|min:8',
-            'date_of_birth' => 'required|date',
+            'date_of_birth' => 'required|date|before:today',
             'place_of_birth' => 'required|string|max:255',
             'nik' => 'required|string|unique:penduduks',
-            'address' => 'required|string',
-            'phone' => 'required|string',
+            'kk' => 'required|string',
+            'rt' => 'required|string',
+            'rw' => 'required|string',
+            'desa' => 'required|string',
+            'kecamatan' => 'required|string',
+            'kabupaten' => 'required|string',
             'religion' => 'required|string',
             'gender' => 'required|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -57,13 +62,17 @@ class PendudukController extends Controller
 
         $penduduk = new Penduduk();
         $penduduk->name = $request->name;
-        $penduduk->email = $request->email;
+        $penduduk->phone = $request->phone;
         $penduduk->password = bcrypt($request->password);
         $penduduk->date_of_birth = $request->date_of_birth;
         $penduduk->place_of_birth = $request->place_of_birth;
         $penduduk->nik = $request->nik;
-        $penduduk->address = $request->address;
-        $penduduk->phone = $request->phone;
+        $penduduk->kk = $request->kk;
+        $penduduk->rt = $request->rt;
+        $penduduk->rw = $request->rw;
+        $penduduk->desa = $request->desa;
+        $penduduk->kecamatan = $request->kecamatan;
+        $penduduk->kabupaten = $request->kabupaten;
         $penduduk->religion = $request->religion;
         $penduduk->gender = $request->gender;
 
@@ -74,7 +83,7 @@ class PendudukController extends Controller
 
         $penduduk->save();
 
-        return redirect()->route('penduduk.index')->with('success', 'Pengguna berhasil ditambahkan!');
+        return redirect()->route('penduduk.index')->with('success', 'penduduk berhasil ditambahkan!');
     }
 
     /**
@@ -109,20 +118,24 @@ class PendudukController extends Controller
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:penduduks,email,' . $penduduk->id,
+            'phone' => 'required|string|unique:penduduks,phone,' . $penduduk->id,
             'password' => 'nullable|string|min:8', // Tambahkan konfirmasi password jika diperlukan
             'place_of_birth' => 'required|string|max:255',
             'date_of_birth' => 'required|date',
             'nik' => 'required|string|unique:penduduks,nik,' . $penduduk->id,
-            'address' => 'required|string',
-            'phone' => 'nullable|string',
+            'kk' => 'required|string',
+            'rt' => 'required|string',
+            'rw' => 'required|string',
+            'desa' => 'required|string',
+            'kecamatan' => 'required|string',
+            'kabupaten' => 'required|string',
             'religion' => 'nullable|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Update data penduduk
         $penduduk->name = $request->name;
-        $penduduk->email = $request->email;
+        $penduduk->phone = $request->phone;
 
         // Hanya update password jika diisi
         if ($request->filled('password')) {
@@ -132,8 +145,12 @@ class PendudukController extends Controller
         $penduduk->place_of_birth = $request->place_of_birth;
         $penduduk->date_of_birth = $request->date_of_birth;
         $penduduk->nik = $request->nik;
-        $penduduk->address = $request->address;
-        $penduduk->phone = $request->phone;
+        $penduduk->kk = $request->kk;
+        $penduduk->rt = $request->rt;
+        $penduduk->rw = $request->rw;
+        $penduduk->desa = $request->desa;
+        $penduduk->kecamatan = $request->kecamatan;
+        $penduduk->kabupaten = $request->kabupaten;
         $penduduk->religion = $request->religion;
 
         // Cek apakah ada foto baru yang diunggah
@@ -165,6 +182,6 @@ class PendudukController extends Controller
         }
 
         $penduduk->delete(); // Hapus pengguna
-        return redirect()->back()->with('success', 'Pengguna berhasil dihapus!');
+        return redirect()->back()->with('success', 'Penduduk berhasil dihapus!');
     }
 }

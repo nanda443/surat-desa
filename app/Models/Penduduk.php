@@ -12,14 +12,19 @@ class Penduduk extends Model
 
     protected $fillable = [
         'name',
-        'email',
+        'phone',
         'password',
         'date_of_birth',
         'place_of_birth',
         'nik',
+        'kk',
         'gender',
+        'rt',
+        'rw',
+        'desa',
+        'kecamatan',
+        'kabupaten',
         'address',
-        'phone',
         'religion',
         'photo_path',
     ];

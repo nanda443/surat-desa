@@ -26,12 +26,16 @@
                     <li><a class="nav-link" href="">Pengurus</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
+            <li
+                class="dropdown {{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
                     <span>Data Master</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="">Surat</a></li>
-                    <li><a class="nav-link" href="">Waktu Pelayanan</a></li>
+                    <li
+                        class="{{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('waktu-pelayanan.index') }}">Waktu Pelayanan</a>
+                    </li>
                     <li><a class="nav-link" href="">Prosedur</a></li>
                 </ul>
             </li>

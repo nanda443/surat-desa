@@ -14,14 +14,14 @@ class ProfilDesaSeeder extends Seeder
 
         // Menambahkan satu baris data dummy
         ProfilDesa::create([
-            'nama_kepala_desa' => $faker->name,
-            'nama_kelurahan' => $faker->word,
-            'email' => $faker->unique()->safeEmail,
-            'kontak' => $faker->phoneNumber,
-            'website' => $faker->url,
-            'provinsi' => $faker->state,
-            'kabupaten' => $faker->city,
-            'alamat' => $faker->address,
+            'nama_kepala_desa' => 'nama Kelapa Desa',
+            'nama_kelurahan' => 'nama Kelurahan',
+            'email' => 'emailkeluarahan@gmail.com',
+            'kontak' => 'kontak kelurahan',
+            'website' => 'website kelurahan',
+            'provinsi' => 'provinsi',
+            'kabupaten' => 'kabupaten',
+            'alamat' => 'alamat',
         ]);
     }
 }

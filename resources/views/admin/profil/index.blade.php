@@ -22,10 +22,10 @@
                         <div class="col-md-4 text-center mx-auto">
                             @if ($profilDesa->logo)
                                 <img src="{{ asset('storage/' . $profilDesa->logo) }}" alt="Logo Desa"
-                                    class="img-thumbnail rounded-circle" style="width: 150px; height: 150px;">
+                                    class="img-thumbnail " style="width: 150px; height: 150px;">
                             @else
                                 <img src="{{ asset('template/dist/assets/img/avatar/avatar-2.png') }}" alt="Logo Desa"
-                                    class="img-thumbnail rounded-circle" style="width: 150px; height: 150px;">
+                                    class="img-thumbnail " style="width: 150px; height: 150px;">
                             @endif
                             <h4 class="mt-3" style="font-size: 1.5rem;">{{ $profilDesa->nama_kelurahan }}</h4>
                         </div>

@@ -27,7 +27,14 @@
                 </ul>
             </li>
             <li
-                class="dropdown {{ request()->is('waktu-pelayanan') || request()->is('waktu-pelayanan/*') || request()->is('jenis-surat') || request()->is('jenis-surat/*') || request()->is('prosedur') || request()->is('prosedur/*') ? 'active' : '' }}">
+                class="dropdown {{ request()->is('waktu-pelayanan') ||
+                request()->is('waktu-pelayanan/*') ||
+                request()->is('jenis-surat') ||
+                request()->is('jenis-surat/*') ||
+                request()->is('prosedur') ||
+                request()->is('prosedur/*')
+                    ? 'active'
+                    : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i>
                     <span>Data Master</span></a>
                 <ul class="dropdown-menu">

@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             ProfilDesaSeeder::class,
             WaktuPelayananSeeder::class,
             JenisSuratSeeder::class,
-            ProsedurSeeder::class
+            UserSeeder::class
         ]);
     }
 }

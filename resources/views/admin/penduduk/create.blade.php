@@ -20,15 +20,15 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="Tepelon">Tepelon<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="Tepelon"
-                                    value="{{ old('phone') }}">
-                                @error('phone')
+                                <label for="Email">Email<span class="text-danger">*</span></label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" id="Email" value="{{ old('email') }}">
+                                @error('email')
                                     <div class="invalid-feedback">{{ $message }}
                                     </div>
                                 @enderror
                             </div>
+
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password<span class="text-danger">*</span></label>
                                 <input type="password" class="form-control @error('password') is-invalid @enderror"
@@ -41,15 +41,6 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="tanggalLahir">Tanggal Lahir<span class="text-danger">*</span></label>
-                                <input type="date" class="form-control @error('date_of_birth') is-invalid @enderror"
-                                    name="date_of_birth" id="tanggalLahir" value="{{ old('date_of_birth') }}">
-                                @error('date_of_birth')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
                                 <label for="tempatLahir">Tempat Lahir<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('place_of_birth') is-invalid @enderror"
                                     name="place_of_birth" id="tempatLahir" value="{{ old('place_of_birth') }}">
@@ -58,6 +49,16 @@
                                     </div>
                                 @enderror
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="tanggalLahir">Tanggal Lahir<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control @error('date_of_birth') is-invalid @enderror"
+                                    name="date_of_birth" id="tanggalLahir" value="{{ old('date_of_birth') }}">
+                                @error('date_of_birth')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -112,6 +113,16 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
+                                <label for="Telepon">Telepon<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="Telepon"
+                                    value="{{ old('phone') }}">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label for="RT">RT<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('rt') is-invalid @enderror"
                                     oninput="this.value = this.value.replace(/\D/g, '')" name="rt" id="RT"
@@ -131,42 +142,12 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="Desa">Desa<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('desa') is-invalid @enderror"
-                                    name="desa" id="Desa" value="{{ old('desa') }}">
-                                @error('desa')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="Kecamatan">Kecamatan<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('kecamatan') is-invalid @enderror"
-                                    name="kecamatan" id="Kecamatan" value="{{ old('kecamatan') }}">
-                                @error('kecamatan')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="Kabupaten">Kabupaten/Kota<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('kabupaten') is-invalid @enderror"
-                                    name="kabupaten" id="Kabupaten" value="{{ old('kabupaten') }}">
-                                @error('kabupaten')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
                         </div>
                         <div class="form-group">
                             <label for="image1">Foto</label>
-                            <input type="file" class="form-control @error('photo') is-invalid @enderror"
-                                name="photo" id="image1">
-                            @error('photo')
+                            <input type="file" class="form-control @error('photo_path') is-invalid @enderror"
+                                name="photo_path" id="image1">
+                            @error('photo_path')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>

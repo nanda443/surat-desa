@@ -21,7 +21,30 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'date_of_birth',
+        'place_of_birth',
+        'nik',
+        'kk',
+        'gender',
+        'religion',
+        'rt',
+        'rw',
+        'photo_path',
+        'role'
     ];
+
+    public function scopeAdmin($query)
+    {
+        return $query->where('role', 'admin');
+    }
+
+    /**
+     * Scope untuk mendapatkan data penduduk
+     */
+    public function scopePenduduk($query)
+    {
+        return $query->where('role', 'penduduk');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

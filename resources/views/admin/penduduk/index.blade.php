@@ -28,7 +28,8 @@
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Nama Lengkap</th>
-                                        <th class="text-center">Telepon</th>
+                                        <th class="text-center">Email</th>
+                                        {{-- <th class="text-center">Telepon</th> --}}
                                         <th class="text-center">Tannggal Lahir</th>
                                         <th class="text-center">Tempat Lahir</th>
                                         <th class="text-center">NIK</th>
@@ -43,7 +44,8 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            {{-- <td>{{ $item->phone }}</td> --}}
                                             <td>{{ $item->date_of_birth }}</td>
                                             <td>{{ $item->place_of_birth }}</td>
                                             <td>{{ $item->nik }}</td>
@@ -61,9 +63,6 @@
                                                         empty($item->kk) ||
                                                         empty($item->rt) ||
                                                         empty($item->rw) ||
-                                                        empty($item->desa) ||
-                                                        empty($item->kecamatan) ||
-                                                        empty($item->kabupaten) ||
                                                         empty($item->phone) ||
                                                         empty($item->religion) ||
                                                         empty($item->gender);

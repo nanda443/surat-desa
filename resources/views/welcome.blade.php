@@ -64,7 +64,8 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted" href="{{ route('login') }}">LOGIN</a>
+            <a class="btn-getstarted" href="{{ route('login') }}">MASUK</a>
+            <a class="btn-getstarted" href="{{ route('register') }}">DAFTAR</a>
 
         </div>
     </header>
@@ -105,9 +106,11 @@
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
                             <div>
-                                <h4 class="title"><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas
-                                    molestias excepturi</p>
+                                <h4 class="title"><a href="#" class="stretched-link">Pengajuan Surat Online</a>
+                                </h4>
+                                <p class="description">Ajukan berbagai jenis surat desa dengan mudah melalui platform
+                                    kami,
+                                    tanpa harus datang langsung ke kantor desa.</p>
                             </div>
                         </div>
                     </div>
@@ -117,9 +120,11 @@
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
                             <div>
-                                <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-                                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip exa</p>
+                                <h4 class="title"><a href="#" class="stretched-link">Pemantauan Status
+                                        Surat</a></h4>
+                                <p class="description">Pantau status pengajuan surat Anda secara real-time, mulai dari
+                                    proses
+                                    pengajuan hingga selesai diproses.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -128,10 +133,11 @@
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
                             <div>
-                                <h4 class="title"><a href="#" class="stretched-link">Sed ut perspiciatis</a>
+                                <h4 class="title"><a href="#" class="stretched-link">Riwayat Surat</a>
                                 </h4>
-                                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum</p>
+                                <p class="description">Lihat riwayat lengkap dari semua surat yang pernah Anda ajukan,
+                                    untuk
+                                    keperluan dokumentasi dan arsip.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
@@ -363,9 +369,9 @@
                 <div class="row gy-4 mt-1">
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                            frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0313424346664!2d104.44745309999999!3d-4.764537499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e388517a3447583%3A0x36f874fefdc40bd9!2s6CPW%2B5XP%2C%20Sukajadi%2C%20Kec.%20Kasui%2C%20Kabupaten%20Way%20Kanan%2C%20Lampung!5e0!3m2!1sid!2sid!4v1732595787774!5m2!1sid!2sid"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div><!-- End Google Maps -->
                 </div>
             </div>

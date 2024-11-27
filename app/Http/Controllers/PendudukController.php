@@ -15,13 +15,30 @@ class PendudukController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $penduduk = User::penduduk()->latest()->paginate(10);
+        // Ambil query pencarian jika ada
+        $search = $request->input('search');
+
+        // Filter data berdasarkan pencarian
+        $penduduk = User::penduduk()
+            ->when($search, function ($query, $search) {
+                $query->where(function ($subQuery) use ($search) {
+                    $subQuery->where('name', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%")
+                        ->orWhere('nik', 'like', "%{$search}%")
+                        ->orWhere('gender', 'like', "%{$search}%")
+                        ->orWhere('religion', 'like', "%{$search}%")
+                        ->orWhere('pekerjaan', 'like', "%{$search}%");
+                });
+            })
+            ->latest()
+            ->paginate(10);
         return view('admin.penduduk.index', [
             'title' => 'Penduduk',
-            'penduduk' => $penduduk
+            'penduduk' => $penduduk,
+            'search' => $search
         ]);
     }
 
@@ -51,6 +68,7 @@ class PendudukController extends Controller
             'place_of_birth' => 'required|string|max:255',
             'nik' => 'required|string|unique:users',
             'kk' => 'required|string',
+            'pekerjaan' => 'required|string',
             'rt' => 'required|string',
             'rw' => 'required|string',
             'religion' => 'required|string',
@@ -67,6 +85,7 @@ class PendudukController extends Controller
         $penduduk->place_of_birth = $request->place_of_birth;
         $penduduk->nik = $request->nik;
         $penduduk->kk = $request->kk;
+        $penduduk->pekerjaan = $request->pekerjaan;
         $penduduk->rt = $request->rt;
         $penduduk->rw = $request->rw;
         $penduduk->religion = $request->religion;
@@ -122,6 +141,7 @@ class PendudukController extends Controller
             'date_of_birth' => 'required|date|before:today',
             'nik' => 'required|string|unique:users,nik,' . $penduduk->id,
             'kk' => 'required|string',
+            'pekerjaan' => 'required|string',
             'rt' => 'required|string',
             'rw' => 'required|string',
             'gender' => 'nullable|string',
@@ -143,6 +163,7 @@ class PendudukController extends Controller
         $penduduk->date_of_birth = $request->date_of_birth;
         $penduduk->nik = $request->nik;
         $penduduk->kk = $request->kk;
+        $penduduk->pekerjaan = $request->pekerjaan;
         $penduduk->rt = $request->rt;
         $penduduk->rw = $request->rw;
         $penduduk->gender = $request->gender;

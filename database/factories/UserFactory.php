@@ -33,6 +33,7 @@ class UserFactory extends Factory
             'place_of_birth' => fake()->city(),
             'nik' => fake()->nik(),
             'kk' => fake()->unique()->numerify('##########'),
+            'pekerjaan' => fake()->jobTitle(),
             'gender' => fake()->randomElement(['laki-laki', 'perempuan']),
             'religion' => fake()->randomElement(['Islam', 'Kristen', 'Katholik', 'Hindu', 'Budha', 'Konghucu']),
             'rt' => fake()->randomDigitNotNull(),

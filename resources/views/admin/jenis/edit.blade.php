@@ -18,9 +18,9 @@
                                     readonly="">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputName">Singkatan<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('singkatan') is-invalid @enderror"
-                                    name="singkatan" id="inputName" placeholder="" value="{{ $jenisSurat->singkatan }}"
+                                <label for="inputName">Kode<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('kode') is-invalid @enderror"
+                                    name="kode" id="inputName" placeholder="" value="{{ $jenisSurat->kode }}"
                                     readonly="">
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="card-footer">
                             <button class="btn btn-primary">Simpan</button>
-                            <a href="{{ route('waktu-pelayanan.index') }}" class="btn btn-light ml-3">Batal</a>
+                            <a href="{{ route('jenis-surat.index') }}" class="btn btn-light ml-3">Batal</a>
                         </div>
                     </form>
                 </div>

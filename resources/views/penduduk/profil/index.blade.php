@@ -17,6 +17,7 @@
                                 empty($penduduk->place_of_birth) ||
                                 empty($penduduk->nik) ||
                                 empty($penduduk->kk) ||
+                                empty($penduduk->pekerjaan) ||
                                 empty($penduduk->rt) ||
                                 empty($penduduk->rw) ||
                                 empty($penduduk->phone) ||
@@ -58,6 +59,7 @@
                                     <p><strong>Telepon:</strong> {{ $penduduk->phone }}</p>
                                     <p><strong>RT:</strong> {{ $penduduk->rt }}</p>
                                     <p><strong>RW:</strong> {{ $penduduk->rw }}</p>
+                                    <p><strong>Pekerjaan:</strong> {{ $penduduk->pekerjaan }}</p>
                                 </div>
                             </div>
                         </div>
@@ -67,6 +69,8 @@
                             <a href="{{ route('penduduk.profil.edit', $penduduk->id) }}" class="btn btn-warning">Lengkapi
                                 Data</a>
                         @endif
+                        <a href="{{ route('penduduk.profil.edit', $penduduk->id) }}" class="btn btn-primary">Edit
+                            Profil</a>
                     </div>
                 </div>
             </div>

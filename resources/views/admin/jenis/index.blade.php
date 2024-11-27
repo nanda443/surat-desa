@@ -26,7 +26,7 @@
                                     <tr>
                                         <th class="">No</th>
                                         <th class="">Jenis Surat</th>
-                                        <th class="">Singkatan</th>
+                                        <th class="">Kode</th>
                                         <th class="">Keterangan</th>
                                         <th class="">Aksi</th>
                                     </tr>
@@ -35,7 +35,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->nama_surat }}</td>
-                                            <td>{{ $item->singkatan }}</td>
+                                            <td>{{ $item->kode }}</td>
                                             <td>{{ $item->deskripsi }}</td>
                                             <td class="">
                                                 <a href="{{ route('jenis-surat.edit', $item->id) }}"

@@ -83,7 +83,27 @@
                                     </div>
                                 @enderror
                             </div>
-
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="pekerjaan">Pekerjaan</label>
+                                <input type="text" class="form-control @error('pekerjaan') is-invalid @enderror"
+                                    name="pekerjaan" id="pekerjaan" value="{{ $penduduk->pekerjaan }}">
+                                @error('pekerjaan')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="telepon">Telepon</label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="telepon"
+                                    value="{{ $penduduk->phone }}">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -117,17 +137,8 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="telepon">Telepon</label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="telepon"
-                                    value="{{ $penduduk->phone }}">
-                                @error('phone')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-4">
+
+                            <div class="form-group col-md-6">
                                 <label for="RT">RT<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('rt') is-invalid @enderror"
                                     name="rt" oninput="this.value = this.value.replace(/\D/g, '')" id="RT"
@@ -137,7 +148,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="RW">RW<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('rw') is-invalid @enderror"
                                     oninput="this.value = this.value.replace(/\D/g, '')" name="rw" id="RW"

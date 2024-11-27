@@ -47,6 +47,7 @@ class AdminController extends Controller
             'place_of_birth' => 'required|string|max:255',
             'nik' => 'required|string|unique:users',
             'kk' => 'required|string',
+            'pekerjaan' => 'required|string',
             'rt' => 'required|string',
             'rw' => 'required|string',
             'religion' => 'required|string',
@@ -63,6 +64,7 @@ class AdminController extends Controller
         $admin->place_of_birth = $request->place_of_birth;
         $admin->nik = $request->nik;
         $admin->kk = $request->kk;
+        $admin->pekerjaan = $request->pekerjaan;
         $admin->rt = $request->rt;
         $admin->rw = $request->rw;
         $admin->religion = $request->religion;
@@ -118,6 +120,7 @@ class AdminController extends Controller
             'date_of_birth' => 'required|date|before:today',
             'nik' => 'required|string|unique:users,nik,' . $admin->id,
             'kk' => 'required|string',
+            'pekerjaan' => 'required|string',
             'rt' => 'required|string',
             'rw' => 'required|string',
             'gender' => 'nullable|string',
@@ -139,6 +142,7 @@ class AdminController extends Controller
         $admin->date_of_birth = $request->date_of_birth;
         $admin->nik = $request->nik;
         $admin->kk = $request->kk;
+        $admin->pekerjaan = $request->pekerjaan;
         $admin->rt = $request->rt;
         $admin->rw = $request->rw;
         $admin->gender = $request->gender;

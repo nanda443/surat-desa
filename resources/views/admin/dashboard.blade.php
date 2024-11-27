@@ -68,7 +68,58 @@
                                     <h4>Waktu Pelayanan</h4>
                                 </div>
                                 <div class="card-body">
-                                    6
+                                    {{ $waktuPelayanan }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <a href="{{ route('admin.pengajuan.riwayat', ['search' => 'Approved']) }}">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-info">
+                                <i class="far fa-file"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Approved</h4>
+                                </div>
+                                <div class="card-body">
+                                    {{ $approvedCount }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <a href="{{ route('admin.pengajuan.riwayat', ['search' => 'Rejected']) }}">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-danger">
+                                <i class="far fa-file"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Rejected</h4>
+                                </div>
+                                <div class="card-body">
+                                    {{ $rejectedCount }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <a href="{{ route('admin.pengajuan.riwayat', ['search' => 'Menunggu']) }}">
+                        <div class="card card-statistic-1">
+                            <div class="card-icon bg-warning">
+                                <i class="far fa-file"></i>
+                            </div>
+                            <div class="card-wrap">
+                                <div class="card-header">
+                                    <h4>Menunggu</h4>
+                                </div>
+                                <div class="card-body">
+                                    {{ $waitingCount }}
                                 </div>
                             </div>
                         </div>

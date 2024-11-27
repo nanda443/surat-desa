@@ -17,10 +17,28 @@
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
+
                         <div class="card-header">
                             <div class="buttons">
                                 <a href="{{ route('penduduk.create') }}" class="btn btn-primary">Tambah Penduduk</a>
                             </div>
+                            <form method="GET" action="{{ route('penduduk.index') }}" class="form-inline ml-auto">
+                                <ul class="navbar-nav mr-3">
+                                    <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                                                class="fas fa-search"></i></a></li>
+                                </ul>
+                                <div class="search-element">
+                                    <input class="form-control" type="search" name="search" placeholder="Search"
+                                        aria-label="Search" data-width="250" value="{{ old('search', $search ?? '') }}">
+                                    @if (request()->has('search') && request('search') != '')
+                                        <a href="{{ route('penduduk.index') }}" class="btn btn-primary ml-2">Reset
+                                            Pencarian</a>
+                                    @else
+                                        <button class="btn btn-primary ml-2" type="submit"><i
+                                                class="fas fa-search"></i></button>
+                                    @endif
+                                </div>
+                            </form>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
@@ -35,7 +53,7 @@
                                         <th class="text-center">NIK</th>
                                         <th class="text-center">Jenis Kelamin</th>
                                         <th class="text-center">Agama</th>
-                                        {{-- <th class="text-center">Alamat</th> --}}
+                                        <th class="text-center">Pekerjaan</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
@@ -45,13 +63,12 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
-                                            {{-- <td>{{ $item->phone }}</td> --}}
                                             <td>{{ $item->date_of_birth }}</td>
                                             <td>{{ $item->place_of_birth }}</td>
                                             <td>{{ $item->nik }}</td>
                                             <td>{{ $item->gender }}</td>
                                             <td>{{ $item->religion }}</td>
-                                            {{-- <td>{{ $item->address }}</td> --}}
+                                            <td>{{ $item->pekerjaan }}</td>
                                             <td>
                                                 @php
                                                     // Cek apakah ada field yang kosong
@@ -65,6 +82,7 @@
                                                         empty($item->rw) ||
                                                         empty($item->phone) ||
                                                         empty($item->religion) ||
+                                                        empty($item->pekerjaan) ||
                                                         empty($item->gender);
                                                 @endphp
 

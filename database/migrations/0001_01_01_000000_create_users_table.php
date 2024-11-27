@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('place_of_birth')->nullable();
             $table->string('nik')->unique()->nullable();
             $table->string('kk')->nullable();
+            $table->string('pekerjaan')->nullable();
             $table->enum('gender', ['Laki-laki', 'Perempuan'])->nullable();
             $table->string('religion')->nullable();
             $table->string('rt')->nullable();

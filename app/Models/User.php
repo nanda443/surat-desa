@@ -25,6 +25,7 @@ class User extends Authenticatable
         'place_of_birth',
         'nik',
         'kk',
+        'pekerjaan',
         'gender',
         'religion',
         'rt',

@@ -6,6 +6,7 @@
                 <h1>{{ $title }}</h1>
             </div>
             <div class="card">
+                <span class="text-warning">isi data sesuai KTP</span>
                 <div class="card-body">
                     <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -84,6 +85,27 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
+                                <label for="pekerjaan">Pekerjaan<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('pekerjaan') is-invalid @enderror"
+                                    name="pekerjaan" id="pekerjaan" value="{{ old('pekerjaan') }}">
+                                @error('pekerjaan')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Telepon">Telepon<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="Telepon"
+                                    value="{{ old('phone') }}">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
                                 <label>Agama<span class="text-danger">*</span></label>
                                 <select class="form-control @error('religion') is-invalid @enderror" name="religion">
                                     <option value="" disabled hidden selected>Pilih Agama</option>
@@ -112,17 +134,8 @@
 
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="Telepon">Telepon<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                    oninput="this.value = this.value.replace(/\D/g, '')" name="phone" id="Telepon"
-                                    value="{{ old('phone') }}">
-                                @error('phone')
-                                    <div class="invalid-feedback">{{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-4">
+
+                            <div class="form-group col-md-6">
                                 <label for="RT">RT<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('rt') is-invalid @enderror"
                                     oninput="this.value = this.value.replace(/\D/g, '')" name="rt" id="RT"
@@ -132,7 +145,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="RW">RW<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control @error('rw') is-invalid @enderror"
                                     oninput="this.value = this.value.replace(/\D/g, '')" name="rw" id="RW"

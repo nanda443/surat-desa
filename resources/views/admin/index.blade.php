@@ -61,6 +61,7 @@
                                                         empty($item->place_of_birth) ||
                                                         empty($item->nik) ||
                                                         empty($item->kk) ||
+                                                        empty($item->pekerjaan) ||
                                                         empty($item->rt) ||
                                                         empty($item->rw) ||
                                                         empty($item->phone) ||

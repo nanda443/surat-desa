@@ -43,6 +43,7 @@ class PendudukProfilController extends Controller
             'date_of_birth' => 'required|date|before:today',
             'nik' => 'required|string|unique:users,nik,' . $penduduk->id,
             'kk' => 'required|string',
+            'pekerjaan' => 'required|string',
             'rt' => 'required|string',
             'rw' => 'required|string',
             'gender' => 'nullable|string',
@@ -64,6 +65,7 @@ class PendudukProfilController extends Controller
         $penduduk->date_of_birth = $request->date_of_birth;
         $penduduk->nik = $request->nik;
         $penduduk->kk = $request->kk;
+        $penduduk->pekerjaan = $request->pekerjaan;
         $penduduk->rt = $request->rt;
         $penduduk->rw = $request->rw;
         $penduduk->gender = $request->gender;

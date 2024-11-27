@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Penduduk;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PendudukSeeder extends Seeder
+class PengajuanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,5 @@ class PendudukSeeder extends Seeder
     public function run(): void
     {
         //
-        Penduduk::factory()->count(10)->create(); // Menghasilkan 50 pengguna dummy
     }
 }

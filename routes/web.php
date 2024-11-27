@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\PendudukProfilController;
 use App\Http\Controllers\WaktuPelayananController;
 use App\Http\Controllers\penduduk\PendudukDashboardController;
-use App\Http\Controllers\PendudukProfilController;
 
 Route::get('/', function () {
     $waktuPelayanan = WaktuPelayanan::get();
@@ -31,6 +32,12 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::resource('waktu-pelayanan', WaktuPelayananController::class);
     Route::resource('jenis-surat', JenisSuratController::class);
     Route::resource('admin', AdminController::class);
+    Route::get('/pengajuan/{kode}', [PengajuanController::class, 'list'])->name('pengajuan.list');
+    Route::get('/pengajuan/{id}/detail', [PengajuanController::class, 'show'])->name('pengajuan.show');
+    Route::post('/pengajuan/{id}/approve', [PengajuanController::class, 'approve'])->name('pengajuan.approve');
+    Route::post('/pengajuan/{id}/reject', [PengajuanController::class, 'reject'])->name('pengajuan.reject');
+    Route::get('/pengajuan/{id}/download', [PengajuanController::class, 'download'])->name('pengajuan.download');
+    Route::get('/riwayat-surat', [PengajuanController::class, 'riwayat'])->name('admin.pengajuan.riwayat');
 });
 
 Route::middleware(['auth', 'role:penduduk'])->prefix('penduduk')->group(function () {
@@ -38,6 +45,10 @@ Route::middleware(['auth', 'role:penduduk'])->prefix('penduduk')->group(function
     Route::get('/profil', [PendudukProfilController::class, 'index'])->name('penduduk.profil');
     Route::get('profil/edit', [PendudukProfilController::class, 'edit'])->name('penduduk.profil.edit');
     Route::put('/profil', [PendudukProfilController::class, 'update'])->name('penduduk.profil.update');
+    Route::get('/pengajuan/{kode}/form', [PengajuanController::class, 'create'])->name('pengajuan.form');
+    Route::post('/pengajuan/{kode}', [PengajuanController::class, 'submit'])->name('pengajuan.submit');
+    Route::get('/riwayat-surat', [PengajuanController::class, 'riwayat'])->name('penduduk.riwayat.surat');
+    Route::get('/pengajuan/{id}/download', [PengajuanController::class, 'download'])->name('penduduk.pengajuan.download');
 });
 
 require __DIR__ . '/auth.php';

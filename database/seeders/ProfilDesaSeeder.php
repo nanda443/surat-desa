@@ -18,7 +18,7 @@ class ProfilDesaSeeder extends Seeder
             'nama_kelurahan' => 'nama Kelurahan',
             'email' => 'emailkeluarahan@gmail.com',
             'kontak' => 'kontak kelurahan',
-            'website' => 'website kelurahan',
+            'website' => 'https://websitesukajadi.com',
             'provinsi' => 'provinsi',
             'kabupaten' => 'kabupaten',
             'alamat' => 'alamat',

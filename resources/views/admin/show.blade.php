@@ -17,6 +17,7 @@
                                 empty($admin->place_of_birth) ||
                                 empty($admin->nik) ||
                                 empty($admin->kk) ||
+                                empty($admin->pekerjaan) ||
                                 empty($admin->rt) ||
                                 empty($admin->rw) ||
                                 empty($admin->phone) ||
@@ -58,6 +59,7 @@
                                     <p><strong>Telepon:</strong> {{ $admin->phone }}</p>
                                     <p><strong>RT:</strong> {{ $admin->rt }}</p>
                                     <p><strong>RW:</strong> {{ $admin->rw }}</p>
+                                    <p><strong>Pekerjaan:</strong> {{ $admin->pekerjaan }}</p>
                                 </div>
                             </div>
                         </div>

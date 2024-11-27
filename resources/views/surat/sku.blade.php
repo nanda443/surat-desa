@@ -98,7 +98,7 @@
             </tr>
             <tr>
                 <td>Tempat/Tanggal Lahir</td>
-                <td>: {{ $place_of_birth }}, {{ $date_of_birth }}</td>
+                <td>: {{ $place_of_birth }}, {{ Carbon\Carbon::parse($date_of_birth)->translatedFormat('d F Y') }}</td>
             </tr>
             <tr>
                 <td>Jenis Kelamin</td>

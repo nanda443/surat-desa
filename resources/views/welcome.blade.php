@@ -104,7 +104,7 @@
 
                     <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-envelope"></i></div>
                             <div>
                                 <h4 class="title"><a href="#" class="stretched-link">Pengajuan Surat Online</a>
                                 </h4>
@@ -131,7 +131,7 @@
 
                     <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-clock-history"></i></div>
                             <div>
                                 <h4 class="title"><a href="#" class="stretched-link">Riwayat Surat</a>
                                 </h4>
@@ -368,7 +368,7 @@
 
                 <div class="row gy-4 mt-1">
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-                        <iframe
+                        <iframe title="Lokasi"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.0313424346664!2d104.44745309999999!3d-4.764537499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e388517a3447583%3A0x36f874fefdc40bd9!2s6CPW%2B5XP%2C%20Sukajadi%2C%20Kec.%20Kasui%2C%20Kabupaten%20Way%20Kanan%2C%20Lampung!5e0!3m2!1sid!2sid!4v1732595787774!5m2!1sid!2sid"
                             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>

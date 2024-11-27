@@ -51,8 +51,7 @@
                                         <th class="">Status</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
-                                    <?php $no = 1; ?>
-                                    @foreach ($riwayatSurat as $item)
+                                    @forelse ($riwayatSurat as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->user->name }}</td>
@@ -78,7 +77,11 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" class="text-center">Tidak ada pengajuan surat saat ini.</td>
+                                        </tr>
+                                    @endforelse
                                 </table>
                             </div>
                         </div>

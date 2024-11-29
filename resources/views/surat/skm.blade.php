@@ -113,7 +113,7 @@
             </tr>
             <tr>
                 <td>Tempat/Tgl Lahir</td>
-                <td>: {{ $place_of_birth }}, {{ Carbon\Carbon::parse($date_of_birth)->translatedFormat('d F Y') }}</td>
+                <td>: {{ $place_of_birth }}, {{ Carbon\Carbon::parse($date_of_birth)->translatedFormat('l, d F Y') }}</td>
             </tr>
             <tr>
                 <td>Agama</td>
@@ -138,7 +138,7 @@
             <tr>
                 <td>Hari/Tanggal</td>
                 <td>:
-                    {{ Carbon\Carbon::parse($data_pengajuan['hari_tanggal_meninggal'])->translatedFormat('l, d F Y') }}
+                    {{ Carbon\Carbon::parse($data_pengajuan['hari_tanggal_meninggal'])->translatedFormat('d F Y') }}
                 </td>
             </tr>
             <tr>

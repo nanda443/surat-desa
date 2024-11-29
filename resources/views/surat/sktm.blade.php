@@ -110,7 +110,7 @@
             </tr>
             <tr>
                 <td>Pekerjaan</td>
-                <td>: Pelajar/Mahasiswa</td>
+                <td>: {{ $pekerjaan }}</td>
             </tr>
             <tr>
                 <td>Alamat</td>
@@ -134,8 +134,8 @@
                 <td>Sukajadi, {{ $tanggal }}</td>
             </tr>
             <tr>
-                <td>Ketua RW</td>
-                <td>Ketua RT</td>
+                <td></td>
+                <td></td>
                 <td>Mengetahui, Kepala Kampung Sukajadi</td>
             </tr>
             <tr>
@@ -143,12 +143,12 @@
                     <img src="{{ public_path('storage/logos/ttd.jpg') }}" style="visibility: hidden" width="150px"
                         alt="Stempel" class="stamp">
                     <br>
-                    {{ $data_pengajuan['ketua_rw'] }}
+
                 </td>
                 <td class="signature"><img src="{{ public_path('storage/logos/ttd.jpg') }}" style="visibility: hidden"
                         width="150px" alt="Stempel" class="stamp">
                     <br>
-                    {{ $data_pengajuan['ketua_rt'] }}
+                    
                 </td>
                 <td class="signature">
                     <img src="{{ public_path('storage/logos/ttd.jpg') }}" width="150px" alt="Stempel" class="stamp">

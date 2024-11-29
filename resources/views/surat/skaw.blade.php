@@ -138,11 +138,11 @@
             <tr>
                 <td>Nama</td>
                 <td>: {{ $data_pengajuan['nama_almarhum'] }}</td>
-            </tr>
+            </tr>{{ Carbon\Carbon::parse($data_pengajuan['hari_tanggal_meninggal'])->translatedFormat('l, d F Y') }}
             <tr>
                 <td>Hari/Tanggal Wafat</td>
                 <td>:
-                    {{ Carbon\Carbon::parse($data_pengajuan['hari_tanggal_meninggal'])->translatedFormat('l, d F Y') }}
+
                 </td>
             </tr>
             <tr>
